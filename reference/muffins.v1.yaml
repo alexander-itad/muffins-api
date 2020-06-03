@@ -9,7 +9,8 @@ paths:
   /delivery:
     get:
       summary: Доставка
-      tags: []
+      tags:
+        - Методы
       responses:
         '200':
           description: OK
@@ -24,7 +25,8 @@ paths:
   /menu:
     get:
       summary: Меню
-      tags: []
+      tags:
+        - Методы
       responses:
         '200':
           description: OK
@@ -50,10 +52,13 @@ paths:
           application/json:
             schema:
               $ref: ../models/Order.v1.yaml
+      tags:
+        - Методы
   /promos:
     get:
       summary: Акции
-      tags: []
+      tags:
+        - Методы
       responses:
         '200':
           description: OK
@@ -68,7 +73,8 @@ paths:
   /upsale:
     get:
       summary: Подарок при покупке
-      tags: []
+      tags:
+        - Методы
       responses:
         '200':
           description: OK
