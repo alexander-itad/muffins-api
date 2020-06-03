@@ -1,0 +1,14 @@
+title: Category
+type: object
+properties:
+  title:
+    type: string
+    description: Название категории
+  data:
+    type: array
+    items:
+      $ref: ./Item.v1.yaml
+required:
+  - title
+  - data
+description: Категории товаров

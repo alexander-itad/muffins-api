@@ -1,0 +1,13 @@
+title: Delivery
+type: object
+description: Доставка до клиента
+properties:
+  title:
+    type: string
+    description: Тип доставки
+  price:
+    type: number
+    description: Стоимость доставки
+required:
+  - title
+  - price

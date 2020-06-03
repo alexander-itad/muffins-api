@@ -1,0 +1,25 @@
+title: Item
+type: object
+properties:
+  id:
+    type: number
+  name:
+    type: string
+    description: название продукта
+  mass:
+    type: number
+    description: масса продукта
+  description:
+    type: string
+    description: описание продукта
+  price:
+    type: number
+    description: родукта
+  img:
+    type: string
+    description: ссылка на картинку
+required:
+  - id
+  - name
+  - price
+description: Товар

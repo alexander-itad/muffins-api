@@ -1,0 +1,16 @@
+title: PromoCode
+type: object
+description: Промокод
+properties:
+  id:
+    type: number
+    description: НУЖНО ПОЯСНИТЬ
+  code:
+    type: string
+  multiplier:
+    type: number
+    description: Во сколько раз меняется стоимость
+required:
+  - id
+  - code
+  - multiplier

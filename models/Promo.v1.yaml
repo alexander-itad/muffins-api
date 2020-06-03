@@ -1,0 +1,21 @@
+title: Promo
+type: object
+properties:
+  id:
+    type: number
+  title:
+    type: string
+    description: название акции
+  description:
+    type: string
+    description: описание акции
+  endDate:
+    type: number
+    description: окончание акции
+  img:
+    type: string
+    description: Ссылка на картинку
+required:
+  - id
+  - img
+description: Акции на главной странице

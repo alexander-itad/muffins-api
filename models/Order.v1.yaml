@@ -1,0 +1,25 @@
+title: Order
+type: object
+description: Заказ клиента
+properties:
+  orderDetails:
+    type: object
+    properties:
+      address:
+        type: string
+      delivery:
+        type: string
+      promoCode:
+        type: string
+      finalPrice:
+        type: string
+      comment:
+        type: string
+      paymentType:
+        type: string
+      deliveryTime:
+        type: string
+      items:
+        type: array
+        items:
+          $ref: ./Item.v1.yaml

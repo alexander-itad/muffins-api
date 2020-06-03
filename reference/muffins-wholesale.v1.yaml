@@ -1,0 +1,130 @@
+openapi: 3.0.0
+info:
+  title: muffins-wholesale
+  version: '1.0'
+  description: API для интеграции приложения для оптовых покупателей и базы 1С
+servers:
+  - url: 'https://link.muffinsbakery.ru/api/v1/whs'
+paths:
+  /upsale:
+    get:
+      summary: Подарок при покупке
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Item.v1.yaml
+        '':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Item.v1.yaml
+      operationId: get-upsale
+      description: Бонусы к покупке
+  /menu:
+    get:
+      summary: Меню
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Category.v1.yaml
+      operationId: get-menu
+      description: Получение списка категорий с товарами
+  /promos:
+    get:
+      summary: Акции
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Promo.v1.yaml
+      operationId: get-promos
+      description: Акции на главной
+    parameters: []
+  /order:
+    post:
+      summary: Заказ
+      operationId: post-order
+      responses:
+        '200':
+          description: OK
+      description: Отправка заказа
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Order.v1.yaml
+  /delivery:
+    get:
+      summary: Доставка
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Delivery.v1.yaml
+      operationId: get-delivery
+      description: Цена доставки - КАД/за КАДом
+  /auth:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '401':
+          description: Unauthorized
+      operationId: get-auth
+      description: Аутентификация оптовых заказчиков
+      parameters: []
+      security:
+        - insert here: []
+        - add key: []
+components:
+  schemas:
+    Customer:
+      title: Customer
+      type: object
+      properties:
+        uuid4:
+          type: string
+        '':
+          type: string
+      description: Оптовый заказчик
+  securitySchemes:
+    insert here:
+      type: http
+      scheme: bearer
+    add key:
+      name: Ключ заказчика
+      type: apiKey
+      in: query
+      description: Ключи хранятся в 1С в специальном поле и отправляются заказчикам
+security:
+  - insert here: []
