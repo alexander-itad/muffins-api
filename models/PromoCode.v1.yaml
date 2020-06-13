@@ -7,6 +7,7 @@ properties:
     description: НУЖНО ПОЯСНИТЬ
   code:
     type: string
+    description: Сам код
   multiplier:
     type: number
     description: Во сколько раз меняется стоимость

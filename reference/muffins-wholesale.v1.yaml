@@ -118,12 +118,12 @@ components:
     Customer:
       title: Customer
       type: object
+      description: Оптовый заказчик
       properties:
         uuid4:
           type: string
-        '':
+        name:
           type: string
-      description: Оптовый заказчик
   securitySchemes:
     insert here:
       type: http
