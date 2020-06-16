@@ -4,7 +4,7 @@ info:
   version: '1.0'
   description: API для интеграции приложения для оптовых покупателей и базы 1С
 servers:
-  - url: 'https://link.muffinsbakery.ru/api/v1/whs'
+  - url: 'https://link.muffinsbakery.ru:7143/unf-201908/hs/api/v1/whs'
 paths:
   /upsale:
     get:
@@ -108,11 +108,8 @@ paths:
         '401':
           description: Unauthorized
       operationId: get-auth
-      description: Аутентификация оптовых заказчиков
+      description: Аутентификация оптовых заказчиков с помощью guid
       parameters: []
-      security:
-        - insert here: []
-        - add key: []
 components:
   schemas:
     Customer:
@@ -120,18 +117,21 @@ components:
       type: object
       description: Оптовый заказчик
       properties:
-        uuid4:
-          type: string
         name:
           type: string
+        address:
+          type: array
+          items:
+            type: string
   securitySchemes:
     insert here:
       type: http
       scheme: bearer
-    add key:
+    add api key:
       name: Ключ заказчика
       type: apiKey
       in: query
       description: Ключи хранятся в 1С в специальном поле и отправляются заказчикам
 security:
   - insert here: []
+  - add api key: []

@@ -2,24 +2,63 @@ title: Order
 type: object
 description: Заказ клиента
 properties:
-  orderDetails:
+  delivery:
     type: object
+    description: Детали доставки
+    required:
+      - address
+      - deliveryType
     properties:
       address:
         type: string
-      delivery:
-        type: string
+        description: Адрес доставки
+      deliveryType:
+        $ref: ./Delivery.v1.yaml
+      deliveryTime:
+        type: number
+        description: Время доставки
+  payment:
+    type: object
+    description: Детали оплаты
+    required:
+      - finalPrice
+      - paymentType
+    properties:
       promoCode:
-        type: string
+        $ref: ./PromoCode.v1.yaml
       finalPrice:
-        type: string
-      comment:
-        type: string
+        type: number
+        description: Финальная стоимость
       paymentType:
         type: string
-      deliveryTime:
+        description: Тип оплаты
+  items:
+    type: array
+    description: Заказанные позиции
+    items:
+      $ref: ./orderedItems.v1.yaml
+  comment:
+    type: string
+    description: Комментарий
+  contact:
+    type: object
+    description: Как связаться
+    required:
+      - tel
+      - name
+      - needCall
+    properties:
+      tel:
         type: string
-      items:
-        type: array
-        items:
-          $ref: ./Item.v1.yaml
+        description: Телефон
+      name:
+        type: string
+        description: Имя заказчика
+      needCall:
+        type: boolean
+        description: Нужен ли обратный звонок?
+required:
+  - delivery
+  - payment
+  - items
+  - contact

@@ -1,5 +1,6 @@
 title: Category
 type: object
+description: Категории товаров
 properties:
   title:
     type: string
@@ -11,4 +12,3 @@ properties:
 required:
   - title
   - data
-description: Категории товаров

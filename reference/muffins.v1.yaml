@@ -4,7 +4,7 @@ info:
   version: '1.0'
   description: API для интеграции приложения для розничных покупателей и базы 1С
 servers:
-  - url: 'https://link.muffinsbakery.ru/api/v1/pvt'
+  - url: 'https://link.muffinsbakery.ru:7143/unf-201908/hs/api/v1/pvt'
 paths:
   /delivery:
     get:

@@ -1,0 +1,16 @@
+title: orderedItem
+type: object
+properties:
+  id:
+    type: string
+  price:
+    type: number
+    description: Стоимость позиции
+  amount:
+    type: number
+    description: Количество
+required:
+  - id
+  - price
+  - amount
+description: Заказанные позиции
