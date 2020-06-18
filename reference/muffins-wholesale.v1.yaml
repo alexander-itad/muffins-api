@@ -6,29 +6,6 @@ info:
 servers:
   - url: 'https://link.muffinsbakery.ru:7143/unf-201908/hs/api/v1/whs'
 paths:
-  /upsale:
-    get:
-      summary: Подарок при покупке
-      tags:
-        - Методы
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: ../models/Item.v1.yaml
-        '':
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: ../models/Item.v1.yaml
-      operationId: get-upsale
-      description: Бонусы к покупке
   /menu:
     get:
       summary: Меню
