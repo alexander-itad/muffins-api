@@ -127,11 +127,13 @@ components:
             type: string
       required:
         - name
+      x-tags:
+        - Models
   securitySchemes:
     insert here:
       type: http
       scheme: bearer
-    add api key:
+    guid:
       name: Ключ заказчика
       type: apiKey
       in: query
