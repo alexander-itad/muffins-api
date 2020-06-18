@@ -33,9 +33,16 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: ../models/Promo.v1.yaml
+                type: object
+                properties:
+                  promoCodes:
+                    type: array
+                    items:
+                      $ref: ../models/PromoCode.v1.yaml
+                  promos:
+                    type: array
+                    items:
+                      $ref: ../models/Promo.v1.yaml
       operationId: get-promos
       description: Акции на главной
     parameters: []
