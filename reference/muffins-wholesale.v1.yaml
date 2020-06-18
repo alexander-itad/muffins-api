@@ -95,7 +95,7 @@ paths:
       description: Цена доставки - КАД/за КАДом
   /auth:
     get:
-      summary: Your GET endpoint
+      summary: Аутентификация
       tags:
         - Методы
       responses:
@@ -119,10 +119,14 @@ components:
       properties:
         name:
           type: string
+          description: Название компании
         address:
           type: array
+          description: Адреса компании
           items:
             type: string
+      required:
+        - name
   securitySchemes:
     insert here:
       type: http
