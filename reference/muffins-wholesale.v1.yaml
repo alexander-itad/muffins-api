@@ -77,7 +77,7 @@ paths:
                   $ref: ../models/Delivery.v1.yaml
       operationId: get-delivery
       description: Цена доставки - КАД/за КАДом
-  /auth:
+  /customer:
     get:
       summary: Аутентификация
       tags:
@@ -94,6 +94,7 @@ paths:
       operationId: get-auth
       description: Аутентификация оптовых заказчиков с помощью guid
       parameters: []
+    parameters: []
 components:
   schemas:
     Customer:
