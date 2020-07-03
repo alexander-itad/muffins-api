@@ -91,7 +91,8 @@ paths:
   /promocodes:
     get:
       summary: Your GET endpoint
-      tags: []
+      tags:
+        - Методы
       responses:
         '200':
           description: OK
@@ -134,3 +135,5 @@ components:
 security:
   - insert here: []
   - add api key: []
+tags:
+  - name: Методы
