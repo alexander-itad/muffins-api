@@ -33,16 +33,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  promoCodes:
-                    type: array
-                    items:
-                      $ref: ../models/PromoCode.v1.yaml
-                  promos:
-                    type: array
-                    items:
-                      $ref: ../models/Promo.v1.yaml
+                type: array
+                items:
+                  $ref: ../models/Promo.v1.yaml
       operationId: get-promos
       description: Акции на главной
     parameters: []
@@ -95,6 +88,21 @@ paths:
       description: Аутентификация оптовых заказчиков с помощью guid
       parameters: []
     parameters: []
+  /promocodes:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/PromoCode.v1.yaml
+      operationId: get-promocodes
+      description: Получение промокодов
 components:
   schemas:
     Customer:
