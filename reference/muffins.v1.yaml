@@ -89,8 +89,9 @@ paths:
       description: Бонусы к покупке
   /promocodes:
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: Получение промокодов
+      tags:
+        - Методы
       responses:
         '200':
           description: OK
@@ -110,3 +111,5 @@ components:
       scheme: bearer
 security:
   - insert here: []
+tags:
+  - name: Методы
